@@ -18,13 +18,13 @@ data(globtemp)
 plot(globtemp, main = "Original Graph for globtemp", ylab="Mean", xlab="Year")
 ```
 
-![](STA457-Quiz-3_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](Figs/unnamed-chunk-2-1.png)<!-- -->
 
 ``` r
 acf2(globtemp, main="ACF and PACF for Original Graph")
 ```
 
-![](STA457-Quiz-3_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
+![](Figs/unnamed-chunk-2-2.png)<!-- -->
 
     ##      [,1] [,2] [,3] [,4]  [,5] [,6] [,7] [,8]  [,9] [,10] [,11] [,12] [,13]
     ## ACF  0.91 0.86 0.84 0.82  0.79 0.76 0.74 0.72  0.68  0.66  0.62  0.60  0.57
@@ -47,13 +47,13 @@ globtemp_diff <- diff(globtemp)
 plot(globtemp_diff, main="Graph with Differencing", ylab = "Mean", xlab="Year")
 ```
 
-![](STA457-Quiz-3_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](Figs/unnamed-chunk-3-1.png)<!-- -->
 
 ``` r
 acf2(globtemp_diff, 20, main= "ACF and PACF for Diff")
 ```
 
-![](STA457-Quiz-3_files/figure-gfm/unnamed-chunk-3-2.png)<!-- -->
+![](Figs/unnamed-chunk-3-2.png)<!-- -->
 
     ##       [,1]  [,2]  [,3] [,4]  [,5]  [,6]  [,7] [,8]  [,9] [,10] [,11] [,12]
     ## ACF  -0.24 -0.19 -0.08 0.20 -0.15 -0.03  0.03 0.14 -0.16  0.11 -0.05  0.00
@@ -93,7 +93,7 @@ sarima(globtemp_diff, 0,0,3)
     ## final  value -2.311283 
     ## converged
 
-![](STA457-Quiz-3_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](Figs/unnamed-chunk-4-1.png)<!-- -->
 
     ## $fit
     ## 
@@ -160,7 +160,7 @@ sarima(globtemp_diff,3,0,0)
     ## final  value -2.314682 
     ## converged
 
-![](STA457-Quiz-3_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](Figs/unnamed-chunk-5-1.png)<!-- -->
 
     ## $fit
     ## 
@@ -273,7 +273,7 @@ sarima(globtemp_diff, 3,0,3)
     ## final  value -2.332479 
     ## converged
 
-![](STA457-Quiz-3_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](Figs/unnamed-chunk-6-1.png)<!-- -->
 
     ## $fit
     ## 
@@ -453,7 +453,7 @@ assumption. Hence, we say we can choose this model for our forecasting.
 sarima.for(globtemp, 3,1,0, n.ahead = 10)
 ```
 
-![](STA457-Quiz-3_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](Figs/unnamed-chunk-8-1.png)<!-- -->
 
     ## $pred
     ## Time Series:
